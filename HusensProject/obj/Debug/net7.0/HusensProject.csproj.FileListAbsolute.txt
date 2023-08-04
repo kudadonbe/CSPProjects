@@ -1,0 +1,15 @@
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/bin/Debug/net7.0/HusensProject
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/bin/Debug/net7.0/HusensProject.deps.json
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/bin/Debug/net7.0/HusensProject.runtimeconfig.json
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/bin/Debug/net7.0/HusensProject.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/bin/Debug/net7.0/HusensProject.pdb
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.csproj.AssemblyReference.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.AssemblyInfoInputs.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.AssemblyInfo.cs
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.csproj.CoreCompileInputs.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/refint/HusensProject.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.pdb
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/HusensProject.genruntimeconfig.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/HusensProject/obj/Debug/net7.0/ref/HusensProject.dll
