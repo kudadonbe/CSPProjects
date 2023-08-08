@@ -1,0 +1,15 @@
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/bin/Debug/net7.0/paySlipCalc
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/bin/Debug/net7.0/paySlipCalc.deps.json
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/bin/Debug/net7.0/paySlipCalc.runtimeconfig.json
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/bin/Debug/net7.0/paySlipCalc.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/bin/Debug/net7.0/paySlipCalc.pdb
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.csproj.AssemblyReference.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.AssemblyInfoInputs.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.AssemblyInfo.cs
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.csproj.CoreCompileInputs.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/refint/paySlipCalc.dll
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.pdb
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/paySlipCalc.genruntimeconfig.cache
+/Users/kudadonbe/Documents/GitHub/CSPProjects/paySlipCalc/obj/Debug/net7.0/ref/paySlipCalc.dll
