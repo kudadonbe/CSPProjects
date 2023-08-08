@@ -4,32 +4,56 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        int employeeID = 1;
+        string? employeeID;
         DateTime dateOfJoining;
-
-        Console.WriteLine("Enter Your Name: ");
-        string? employeeName = Console.ReadLine();
-
-        Console.WriteLine("Enter Job Title: ");
-        string? jobTitle = Console.ReadLine();
-
-        Console.WriteLine("Enter Date of Joining (in DD/MM/YYYY format): ");
-        string? dateOfJoiningNullable = Console.ReadLine();
-        string dateOfJoiningString = dateOfJoiningNullable ?? "01/01/2021";
-        // split the date string into day, month and year
-
-
+        string? employeeName;
+        string? jobTitle;
+        string? dateOfJoiningNullable;
+        string dateOfJoiningString;
+        string[] dateOfJoiningArray;
+        string dateOfJoiningStringReversed;
+        string? salary;
+        double basicPay;
+        string? empStatusStr;
+        char employmentStatus;
+        int experienceInYears;
+        TimeSpan experience;
+        
 
         try
         {
-            string[] dateOfJoiningArray = dateOfJoiningString.Split('/');
+
+            Console.WriteLine("Emplyee ID: ");
+            employeeID = Console.ReadLine();
+
+            Console.WriteLine("Enter Your Name: ");
+            employeeName = Console.ReadLine();
+
+            Console.WriteLine("Enter Job Title: ");
+            jobTitle = Console.ReadLine();
+
+            Console.WriteLine("Enter Date of Joining (in DD/MM/YYYY format): ");
+            dateOfJoiningNullable = Console.ReadLine();
+            dateOfJoiningString = dateOfJoiningNullable ?? "01/01/2021";
+            // split the date string into day, month and year
+
+
+
+
+            dateOfJoiningArray = dateOfJoiningString.Split('/');
             // reverse the array to get the year, month and day
             Array.Reverse(dateOfJoiningArray);
             // join the array elements into a string
-            string dateOfJoiningStringReversed = string.Join('/', dateOfJoiningArray);
+            dateOfJoiningStringReversed = string.Join('/', dateOfJoiningArray);
             // convert the string into a DateTime object
             dateOfJoining = Convert.ToDateTime(dateOfJoiningStringReversed);
+            Console.WriteLine("Your basic Pay: ");
+            salary = Console.ReadLine();
+            basicPay = Convert.ToDouble(salary);
+            Console.WriteLine("Employment Status (Permanent or Temporary) indicated by 'P' or 'T'");
+            empStatusStr = Console.ReadLine();
+            empStatusStr ??= "X";;
+            employmentStatus = char.ToUpper(empStatusStr[0]);
         }
         catch (Exception e)
         {
@@ -37,23 +61,40 @@ class Program
             throw;
         }
 
-        double basicPay = 100000.01;
-        char employmentStatus = 'P';
+        experience = DateTime.Now - dateOfJoining;
+        experienceInYears = (int)(experience.TotalDays / 365);
 
 
-        string livingAllowance = CalculateLivingAllowance(employmentStatus, dateOfJoining, basicPay);
-        string bounusAmount = CalculateBounus(employmentStatus, dateOfJoining, basicPay);
 
-        string employeeDetails = @$" 
-            Employee ID: {employeeID}
-            Employee Name: {employeeName}
-            Job Title: {jobTitle}
-            Date of Joining: {dateOfJoining}
-            Basic Pay: {basicPay}
-            Living Allowance: {livingAllowance}
-            Bounus: {bounusAmount}
-            Total Pay: {basicPay + livingAllowance + bounusAmount}
-              ";  
+
+
+        double livingAllowance = CalculateLivingAllowance(employmentStatus, experienceInYears, basicPay);
+        double bounusAmount = CalculateBounus(employmentStatus, experienceInYears, basicPay);
+        // make totalEarnings variable
+
+        double totalEarnings = basicPay + livingAllowance + bounusAmount;
+        double netSalary = totalEarnings; // deduct if any
+
+        string employeeDetails = @$"
+------------------- Salary Slip -------------------
+Employee ID:     {employeeID}
+Employee Name:   {employeeName}
+Job Title:       {jobTitle}
+Date of Joining: {dateOfJoining:dd/MM/yyyy}
+Eperiance:       {experienceInYears} yrs
+--------------------------------------------------
+            
+Earnings:           
+Basic Salary:    {basicPay,14:C2}
+Living Allowance:{livingAllowance,14:C2}
+Bonus:           {bounusAmount,14:C2}
+Total Earnings:  {totalEarnings,14:C2}
+            
+--------------------------------------------------
+Net Salary:       {netSalary,14:C2}
+--------------------------------------------------
+";
+
 
 
 
@@ -62,18 +103,14 @@ class Program
 
     }
 
-    static string CalculateLivingAllowance(char employmentStatus, DateTime dateOfJoining, double basicPay)
+    static double CalculateLivingAllowance(char employmentStatus, int experienceInYears, double basicPay)
     {
         double livingAllowance;
-        int experienceInYears = 0;
-        TimeSpan experience = DateTime.Now - dateOfJoining;
-        experienceInYears = (int)(experience.TotalDays / 365);
-        string LivingAllowanceString = "";
 
 
         if (employmentStatus == 'P')
         {
-            if (experience.TotalDays >= 5 * 385) // 5 years in days (365 days/year * 5 years)
+            if (experienceInYears >= 5 * 385) // 5 years in days (365 days/year * 5 years)
             {
                 livingAllowance = basicPay * 0.1; // 10% of basic pay
             }
@@ -87,9 +124,8 @@ class Program
             livingAllowance = 0;
         }
         // 4995.00 (5yrs)
-        LivingAllowanceString = @$"{livingAllowance} ({experienceInYears}yrs))";
 
-        return LivingAllowanceString;
+        return livingAllowance;
     }
 
 
@@ -103,26 +139,23 @@ class Program
 
     // lest make a function to calculate bounus
 
-    static string CalculateBounus(char employmentStatus, DateTime dateOfJoining, double basicPay)
+    static double CalculateBounus(char employmentStatus, int experienceInYears, double basicPay)
     {
-        double bonus = 0;
-        int experienceInYears = 0;
-        TimeSpan experience = DateTime.Now - dateOfJoining;
-        experienceInYears = (int)(experience.TotalDays / 365);
-        string bounusString = "";
+        double bonus;
+        
 
 
         if (employmentStatus == 'P')
         {
-            if (experience.TotalDays > 25 * 365)
+            if (experienceInYears > 25)
             {
                 bonus = 0.2 * basicPay;
             }
-            else if (experience.TotalDays > 15 * 365)
+            else if (experienceInYears > 15)
             {
                 bonus = 0.15 * basicPay;
             }
-            else if (experience.TotalDays > 5 * 365)
+            else if (experienceInYears > 5)
             {
                 bonus = 0.1 * basicPay;
             }
@@ -136,11 +169,9 @@ class Program
             bonus = 0.03 * basicPay;
         }
 
-        bounusString = @$"{bonus} ({experienceInYears}yrs))";
-        return bounusString;
+        return bonus;
     }
 
+
 }
-
-
 
